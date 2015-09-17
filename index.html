@@ -5,11 +5,13 @@
   </head>
   <body ng-app = "">
     <nav class="{{show_box}}" ng-click="$event.preventDefaults()">
-      <a href="#" ng-click="show_box=true">Find a Class</a>
+      <button href="#" ng-click="show_box=true">Find a Class</button>
       <br/>
-      <a href="#" ng-click="show_box=true">Find a Service</a>
+      <button href="#" ng-click="show_box=true">Find a Service</button>
       <br/>
-      <a href="#" ng-click="show_box=true">Find a Professor</a>
+      <button href="#" ng-click="show_box=true">Find a Professor</button>
+      <br/>
+      <button href="#" ng-click="show_box=true">Order Food</button>
       <br/>
     </nav>
     <p ng-hide="show_box">Nothing clicked</p>
