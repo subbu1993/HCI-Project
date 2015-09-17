@@ -1,19 +1,18 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>AngularJS Example</title>
-  <script src = "angular.min.js"></script>
-</head>
-<body ng-app = "kiosk">
-  <nav class="{{show_box}}" ng-click="$event.preventDefaults()">
-  <a href="#" ng-click="show_box=true">Find a Class</a>
-  <br/>
-  <a href="#" ng-click="show_box=true">Find a Service</a>
-  <br/>
-  <a href="#" ng-click="show_box=true">Find a Professor</a>
-  <br/>
-</nav>
-  <p ng-hide="show_box">Nothing clicked</p>
-  <p ng-show="show_box"> Here is something clicked</p>
-</body>
+  <head>
+    <title>AngularJS Example</title>
+    <script src = "angular.min.js"></script>
+  </head>
+  <body ng-app = "">
+    <nav class="{{show_box}}" ng-click="$event.preventDefaults()">
+      <a href="#" ng-click="show_box=true">Find a Class</a>
+      <br/>
+      <a href="#" ng-click="show_box=true">Find a Service</a>
+      <br/>
+      <a href="#" ng-click="show_box=true">Find a Professor</a>
+      <br/>
+    </nav>
+    <p ng-hide="show_box">Nothing clicked</p>
+    <p ng-show="show_box"> Here is something clicked</p>
+  </body>
 </html>
