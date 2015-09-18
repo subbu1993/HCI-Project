@@ -16,22 +16,27 @@
       }
     </style>
   </head>
-  <body ng-app = "" ng-init="clickable='nothing clicked'">
+  <body ng-app="" ng-init="clickable='Welcome To CampusBot'">
     <center><h1><i>CampusBot</i></h1></center>
-    <button ng-href="#" ng-click="size='200px'">A</button>
+
     <div class ="row">
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
-          <nav class="{{show_box}}" ng-click="$event.preventDefaults()">
+          <nav>
             <br/><br/> <br/> <br/>
-            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Class'">Find a Class</button>
+            <div ng-app="" ng-init="class_button='false'">
+              <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Class';class_button='true'">Find a Class</button>
+              <button ng-href="#" class="btn btn-info btn-block1" ng-show="class_button">Find By Name</button></p>
+              <p ng-show="class_button">Noting showing</p>
+              <p>{{class_button}}</p>
+            </div>
       </div>
       <div class = "col-sm-4">
             <br/><br/> <br/> <br/>
             <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Professor'">Find a Professor</button>
       </div>
     </div>
-    <center><p ng-bind="clickable" font-size={{size}}></p></center>
+    <center><p ng-bind="clickable"></p></center>
     <div class = "row">
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
@@ -44,8 +49,9 @@
       </div>
           </nav>
         </div>
-      </div>
-    </div>
+    <script>
+      var app = app.module('kiosk',[]);
+    </script>
 
   </body>
 </html>
