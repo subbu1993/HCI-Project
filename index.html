@@ -24,12 +24,12 @@
           <nav>
             <br/><br/> <br/> <br/>
             <div>
-              <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Class';class_button=true;text1='Class ID'">{{text1}}</button>
+              <button href="#" class="btn btn-info btn-block1" ng-click="classButtonController()">{{left_top}}</button>
             </div>
       </div>
       <div class = "col-sm-4">
             <br/><br/> <br/> <br/>
-            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Professor'">Find a Professor</button>
+            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Professor'">{{right_top}}</button>
       </div>
     </div>
     <center><p ng-bind="clickable"></p></center>
@@ -37,23 +37,44 @@
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
             <br/><br/> <br/> <br/>
-            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Service'">Find a Service</button>
+            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Service'">{{left_bottom}}</button>
       </div>
       <div class="col-sm-4">
             <br/><br/> <br/> <br/>
-            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Food'">Order Food</button>
+            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Food'">{{right_bottom}}</button>
       </div>
           </nav>
         </div>
     <script>
       var kiosk = angular.module("kiosk",[]);
       kiosk.controller('kioskController',function($scope){
-        console.log('controller called');
-        $scope.text1 = "Find a class";
+        $scope.left_top = "Find a Class";
+        $scope.left_bottom = "Find a Service";
+        $scope.right_top = "Find a Professor";
+        $scope.right_bottom = "Order Food";
         $scope.clickable = "Welcome to CampusBot";
         $scope.class_button = false;
-        $scope.text1 = "blah";
+
+        $scope.classButtonController = function() {
+          $scope.left_top = "Class ID";
+          $scope.left_bottom = "Class Name";
+          $scope.right_top = "Class Code";
+          $scope.right_bottom = "Back";
+          $scope.clickable = "Class";
+          $scope.class_button = true;
+        }
+
+        $scope.reset = function(){
+          $scope.left_top = "Find a Class";
+          $scope.left_bottom = "Find a Service";
+          $scope.right_top = "Find a Professor";
+          $scope.right_bottom = "Order Food";
+          $scope.clickable = "Welcome to CampusBot";
+          $scope.class_button = false;
+        }
       });
+
+
     </script>
   </body>
 </html>
