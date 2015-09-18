@@ -56,4 +56,14 @@ kiosk.controller('kioskController',function($scope){
     $scope.class_button = false;
     $scope.drill_down = true;
   }
+
+  $scope.foodController = function(){
+    $scope.left_top = "Pizza";
+    $scope.left_bottom = "Burger";
+    $scope.right_top = "Beverages";
+    $scope.right_bottom = "Checkout";
+    $scope.clickable = "Welcome to CampusBot";
+    $scope.class_button = false;
+    $scope.drill_down = true;
+  }
 });
