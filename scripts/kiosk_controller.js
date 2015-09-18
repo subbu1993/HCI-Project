@@ -6,6 +6,7 @@ kiosk.controller('kioskController',function($scope){
   $scope.right_bottom = "Order Food";
   $scope.clickable = "Welcome to CampusBot";
   $scope.class_button = false;
+  $scope.drill_down = false;
 
   $scope.classButtonController = function() {
     $scope.left_top = "Class ID";
@@ -14,6 +15,7 @@ kiosk.controller('kioskController',function($scope){
     $scope.right_bottom = "Back";
     $scope.clickable = "Class";
     $scope.class_button = true;
+    $scope.drill_down = true;
   }
 
   $scope.reset = function(){
