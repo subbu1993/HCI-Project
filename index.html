@@ -1,22 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-<body>
+<html>
+  <head>
+    <title>AngularJS Example</title>
+    <script src = "angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<div class="container">
-  <h1><center> NYU POLY KIOSK<center></h1>
-</div>
-<div align = "right">
-  <a href="#" class="btn btn-primary active"><span class="glyphicon glyphicon-hand-right"></span> Find your Class</a>
-  <br/>
-  <a href="#" class="btn btn-primary active"><span class="glyphicon glyphicon-hand-right"></span> Find a Service</a>
-</div>
-</body>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+      .btn-block1{
+        width: 125px !important;
+      }
+    </style>
+  </head>
+  <body ng-app="" ng-init="clickable='Welcome To CampusBot';class_button=false;text1='Find a Class'">
+    <center><h1><i>CampusBot</i></h1></center>
+    <div class ="row">
+      <div class = "col-sm-3"></div>
+      <div class = "col-sm-5">
+          <nav>
+            <br/><br/> <br/> <br/>
+            <div>
+              <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Class';class_button=true;text1='Class ID'">{{text1}}</button>
+            </div>
+      </div>
+      <div class = "col-sm-4">
+            <br/><br/> <br/> <br/>
+            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Professor'">Find a Professor</button>
+      </div>
+    </div>
+    <center><p ng-bind="clickable"></p></center>
+    <div class = "row">
+      <div class = "col-sm-3"></div>
+      <div class = "col-sm-5">
+            <br/><br/> <br/> <br/>
+            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Service'">Find a Service</button>
+      </div>
+      <div class="col-sm-4">
+            <br/><br/> <br/> <br/>
+            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Food'">Order Food</button>
+      </div>
+          </nav>
+        </div>
+    <script>
+      var app = app.module('kiosk',[]);
+    </script>
+
+  </body>
 </html>
