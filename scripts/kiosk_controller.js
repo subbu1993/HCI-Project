@@ -7,6 +7,7 @@ kiosk.controller('kioskController',function($scope){
   $scope.clickable = "Welcome to CampusBot";
   $scope.class_button = false;
   $scope.drill_down = false;
+  $scope.font_size = 10;
 
   $scope.classButtonController = function() {
     $scope.left_top = "Class ID";
