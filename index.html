@@ -19,7 +19,7 @@
     </style>
 
   </head>
-  <body ng-app="kiosk" ng-controller = "kioskController">
+  <body ng-app="kiosk" ng-controller = "kioskController" background="images/background.jpg">
     <center><h1><i>CampusBot Kiosk</i></h1></center>
     <div class="row">
       <div class="col-sm-3"></div>
@@ -37,7 +37,7 @@
       </div>
       <div class = "col-sm-4">
             <br/><br/> <br/> <br/>
-            <button id ="find_a_professor" rel="popover"  data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Professor'">{{right_top}}</button>
+            <button id ="find_a_professor" rel="popover"  data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="professorButtonController()">{{right_top}}</button>
       </div>
     </div>
     <center><p ng-bind="clickable"></p></center>
@@ -45,7 +45,7 @@
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
             <br/><br/> <br/> <br/>
-            <button id ="find_a_service" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Service'">{{left_bottom}}</button>
+            <button id ="find_a_service" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="serviceButtonController()">{{left_bottom}}</button>
       </div>
       <div class="col-sm-4">
             <br/><br/> <br/> <br/>

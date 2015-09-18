@@ -35,7 +35,25 @@ kiosk.controller('kioskController',function($scope){
     $scope.clickable = "Welcome to CampusBot";
     $scope.class_button = false;
     $scope.drill_down = false;
+  }
 
+  $scope.professorButtonController = function(){
+    $scope.left_top = "Name";
+    $scope.left_bottom = "Class";
+    $scope.right_top = "Department";
+    $scope.right_bottom = "Look up a list";
+    $scope.clickable = "Welcome to CampusBot";
+    $scope.class_button = false;
+    $scope.drill_down = true;
+  }
 
+  $scope.serviceButtonController = function(){
+    $scope.left_top = "International Students' office";
+    $scope.left_bottom = "Health Services";
+    $scope.right_top = "Career Services";
+    $scope.right_bottom = "Canteen";
+    $scope.clickable = "Welcome to CampusBot";
+    $scope.class_button = false;
+    $scope.drill_down = true;
   }
 });
