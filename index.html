@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>AngularJS Example</title>
-    <script src = "angular.min.js"></script>
+    <script src = "scripts/angular.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -10,26 +10,33 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="scripts/popover.js"></script>
     <style>
       .btn-block1{
         width: 125px !important;
       }
     </style>
+
   </head>
-  <body ng-app="" ng-init="clickable='Welcome To CampusBot';class_button=false;text1='Find a Class'">
+  <body ng-app="kiosk" ng-controller = "kioskController">
     <center><h1><i>CampusBot</i></h1></center>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-5"><button ng-href="#" class = "btn btn-info btn-small"><i class="glyphicon glyphicon-arrow-left"></i>  Back</button></div>
+      <div class="col-sm-4"></div>
+    </div>
     <div class ="row">
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
           <nav>
             <br/><br/> <br/> <br/>
             <div>
-              <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Class';class_button=true;text1='Class ID'">{{text1}}</button>
+              <button id="find_a_class" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="classButtonController()">{{left_top}}</button>
             </div>
       </div>
       <div class = "col-sm-4">
             <br/><br/> <br/> <br/>
-            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Professor'">Find a Professor</button>
+            <button id ="find_a_professor" rel="popover"  data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Professor'">{{right_top}}</button>
       </div>
     </div>
     <center><p ng-bind="clickable"></p></center>
@@ -37,17 +44,14 @@
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
             <br/><br/> <br/> <br/>
-            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Service'">Find a Service</button>
+            <button id ="find_a_service" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Service'">{{left_bottom}}</button>
       </div>
       <div class="col-sm-4">
             <br/><br/> <br/> <br/>
-            <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Food'">Order Food</button>
+            <button id ="order_food" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Food'">{{right_bottom}}</button>
       </div>
           </nav>
         </div>
-    <script>
-      var app = app.module('kiosk',[]);
-    </script>
-
+    <script src="scripts/kiosk_controller.js"></script>
   </body>
 </html>
