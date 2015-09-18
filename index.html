@@ -16,19 +16,15 @@
       }
     </style>
   </head>
-  <body ng-app="" ng-init="clickable='Welcome To CampusBot'">
+  <body ng-app="" ng-init="clickable='Welcome To CampusBot';class_button=false;text1='Find a Class'">
     <center><h1><i>CampusBot</i></h1></center>
-
     <div class ="row">
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
           <nav>
             <br/><br/> <br/> <br/>
-            <div ng-app="" ng-init="class_button='false'">
-              <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Class';class_button='true'">Find a Class</button>
-              <button ng-href="#" class="btn btn-info btn-block1" ng-show="class_button">Find By Name</button></p>
-              <p ng-show="class_button">Noting showing</p>
-              <p>{{class_button}}</p>
+            <div>
+              <button href="#" class="btn btn-info btn-block1" ng-click="clickable='Class';class_button=true;text1='Class ID'">{{text1}}</button>
             </div>
       </div>
       <div class = "col-sm-4">
