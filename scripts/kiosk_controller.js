@@ -26,4 +26,16 @@ kiosk.controller('kioskController',function($scope){
     $scope.clickable = "Welcome to CampusBot";
     $scope.class_button = false;
   }
+
+  $scope.goBack = function(){
+    $scope.left_top = "Find a Class";
+    $scope.left_bottom = "Find a Service";
+    $scope.right_top = "Find a Professor";
+    $scope.right_bottom = "Order Food";
+    $scope.clickable = "Welcome to CampusBot";
+    $scope.class_button = false;
+    $scope.drill_down = false;
+
+
+  }
 });
