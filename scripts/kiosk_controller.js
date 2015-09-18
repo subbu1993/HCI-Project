@@ -1,8 +1,27 @@
-var kiosk = app.module('kiosk',[]);
+var kiosk = angular.module("kiosk",[]);
 kiosk.controller('kioskController',function($scope){
-  console.log('controller called');
-  $scope.text1 = "Find a class";
+  $scope.left_top = "Find a Class";
+  $scope.left_bottom = "Find a Service";
+  $scope.right_top = "Find a Professor";
+  $scope.right_bottom = "Order Food";
   $scope.clickable = "Welcome to CampusBot";
   $scope.class_button = false;
-  $scope.text1 = "blah";
+
+  $scope.classButtonController = function() {
+    $scope.left_top = "Class ID";
+    $scope.left_bottom = "Class Name";
+    $scope.right_top = "Class Code";
+    $scope.right_bottom = "Back";
+    $scope.clickable = "Class";
+    $scope.class_button = true;
+  }
+
+  $scope.reset = function(){
+    $scope.left_top = "Find a Class";
+    $scope.left_bottom = "Find a Service";
+    $scope.right_top = "Find a Professor";
+    $scope.right_bottom = "Order Food";
+    $scope.clickable = "Welcome to CampusBot";
+    $scope.class_button = false;
+  }
 });
