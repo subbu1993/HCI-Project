@@ -16,14 +16,24 @@
       .btn-block1{
         width: 125px !important;
       }
+      body{
+        background-size: 300px 300px;
+      }
+      p{
+        color: white;
+      }
+      h1{
+        color: white;
+      }
     </style>
 
   </head>
-  <body ng-app="kiosk" ng-controller = "kioskController">
+  <body ng-app="kiosk" ng-controller = "kioskController" background="images/background.jpg">
     <center><h1><i>CampusBot Kiosk</i></h1></center>
+    <br/><br/>
     <div class="row">
       <div class="col-sm-3"></div>
-      <div class="col-sm-5"><button ng-href="#" class = "btn btn-info btn-small"><i class="glyphicon glyphicon-arrow-left"></i>  Back</button></div>
+      <div class="col-sm-5"><button ng-href="#" class = "btn btn-info btn-small" ng-show="drill_down" ng-click="goBack()"><i class="glyphicon glyphicon-arrow-left"></i>  Back</button></div>
       <div class="col-sm-4"></div>
     </div>
     <div class ="row">
@@ -37,7 +47,7 @@
       </div>
       <div class = "col-sm-4">
             <br/><br/> <br/> <br/>
-            <button id ="find_a_professor" rel="popover"  data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Professor'">{{right_top}}</button>
+            <button id ="find_a_professor" rel="popover"  data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="professorButtonController()">{{right_top}}</button>
       </div>
     </div>
     <center><p ng-bind="clickable"></p></center>
@@ -45,11 +55,11 @@
       <div class = "col-sm-3"></div>
       <div class = "col-sm-5">
             <br/><br/> <br/> <br/>
-            <button id ="find_a_service" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Service'">{{left_bottom}}</button>
+            <button id ="find_a_service" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="serviceButtonController()">{{left_bottom}}</button>
       </div>
       <div class="col-sm-4">
             <br/><br/> <br/> <br/>
-            <button id ="order_food" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Food'">{{right_bottom}}</button>
+            <button id ="order_food" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="foodController()">{{right_bottom}}</button>
       </div>
           </nav>
         </div>
