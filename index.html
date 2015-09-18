@@ -1,57 +1,19 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>AngularJS Example</title>
-    <script src = "scripts/angular.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="scripts/popover.js"></script>
-    <style>
-      .btn-block1{
-        width: 125px !important;
-      }
-    </style>
-
-  </head>
-  <body ng-app="kiosk" ng-controller = "kioskController">
-    <center><h1><i>CampusBot</i></h1></center>
-    <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-5"><button ng-href="#" class = "btn btn-info btn-small"><i class="glyphicon glyphicon-arrow-left"></i>  Back</button></div>
-      <div class="col-sm-4"></div>
-    </div>
-    <div class ="row">
-      <div class = "col-sm-3"></div>
-      <div class = "col-sm-5">
-          <nav>
-            <br/><br/> <br/> <br/>
-            <div>
-              <button id="find_a_class" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="classButtonController()">{{left_top}}</button>
-            </div>
-      </div>
-      <div class = "col-sm-4">
-            <br/><br/> <br/> <br/>
-            <button id ="find_a_professor" rel="popover"  data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Professor'">{{right_top}}</button>
-      </div>
-    </div>
-    <center><p ng-bind="clickable"></p></center>
-    <div class = "row">
-      <div class = "col-sm-3"></div>
-      <div class = "col-sm-5">
-            <br/><br/> <br/> <br/>
-            <button id ="find_a_service" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Service'">{{left_bottom}}</button>
-      </div>
-      <div class="col-sm-4">
-            <br/><br/> <br/> <br/>
-            <button id ="order_food" rel="popover" data-trigger="hover" href="#" class="btn btn-primary btn-block1" ng-click="clickable='Food'">{{right_bottom}}</button>
-      </div>
-          </nav>
-        </div>
-    <script src="scripts/kiosk_controller.js"></script>
-  </body>
+<head>
+  <title>AngularJS Example</title>
+  <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app = "kiosk">
+  <nav class="{{show_box}}" ng-click="$event.preventDefaults()">
+  <a href="#" ng-click="show_box=true">Find a Class</a>
+  <br/>
+  <a href="#" ng-click="show_box=true">Find a Service</a>
+  <br/>
+  <a href="#" ng-click="show_box=true">Find a Professor</a>
+  <br/>
+</nav>
+  <p ng-hide="show_box">Nothing clicked</p>
+  <p ng-show="show_box"> Here is something clicked</p>
+</body>
 </html>
