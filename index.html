@@ -16,7 +16,7 @@
       }
     </style>
   </head>
-  <body ng-app="kiosk" ng-controller = "kioskController" ng-init="clickable='Welcome To CampusBot';class_button=false;text1='blah'">
+  <body ng-app="kiosk" ng-controller = "kioskController">
     <center><h1><i>CampusBot</i></h1></center>
     <div class ="row">
       <div class = "col-sm-3"></div>
@@ -45,6 +45,15 @@
       </div>
           </nav>
         </div>
-    <script src="kiosk_controller.js"></script>
+    <script>
+      var kiosk = angular.module("kiosk",[]);
+      kiosk.controller('kioskController',function($scope){
+        console.log('controller called');
+        $scope.text1 = "Find a class";
+        $scope.clickable = "Welcome to CampusBot";
+        $scope.class_button = false;
+        $scope.text1 = "blah";
+      });
+    </script>
   </body>
 </html>
